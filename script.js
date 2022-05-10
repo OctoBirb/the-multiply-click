@@ -16,13 +16,19 @@ var dim1 = {
     ,mult1: 1.01
 }
 
+var clk1 = {
+    cost: 10
+    ,scaling: 100
+    ,mult1: 1.01
+}
+
 var endgame = "eee6" // milliduplexion
 
 /// updating
 window.setInterval(function() {
     if (x.layer == 0) {
         ud("xtxt", "Your value is " + (Decimal.trunc(x * 10) / 10) + ".")
-    } else if (x.layer == 1) {
+    } else if (x.layer == 1 || x.e > 10) {
         ud("xtxt", "Your value is " + (Decimal.trunc(x.m * 10) / 10) + "e" + x.e + ".")
     } else if (x.layer == 2) {
         ud("xtxt", "Your value is " + (Decimal.trunc(x.m * 10) / 10) + "ee" + x.e + ".")
