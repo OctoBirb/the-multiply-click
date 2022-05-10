@@ -20,7 +20,7 @@ var dim1 = {
 var clk1 = {
     cost: 10
     ,scaling: 100
-    ,mult1: 1.02
+    ,mult1: 1.00
     ,quandale: 0
 }
 
@@ -29,8 +29,28 @@ var version = "1.2.0"
 
 function buyDim1() {
     if (x.gt(dim1.cost)) {
-        Decimal.sub(x, clk1.cost)
+        Decimal.sub(x, dim1.cost)
+        Decimal.add(1, dim1.quandale)
+        Decimal.add(dim1.mult1, 0.01)
+        Decimal.mul(dim1.cost, dim1.scaling)
+    } else {
+        console.log("not enough value :(")
     }
+}
+
+function buyClk1() {
+    if (x.gt(clk1.cost)) {
+        Decimal.sub(x, clk1.cost)
+        Decimal.add(1, clk1.quandale)
+        Decimal.add(clk1.mult1, 0.01)
+        Decimal.mul(clk1.cost, clk1.scaling)
+    } else {
+        console.log("not enough value :(")
+    }
+}
+
+function xxclk() {
+    Decimal.mul(clk1.mult1, x)
 }
 
 /// updating
