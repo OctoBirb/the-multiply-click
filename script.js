@@ -14,15 +14,24 @@ var dim1 = {
     cost: 10
     ,scaling: 10
     ,mult1: 1.01
+    ,quandale: 0
 }
 
 var clk1 = {
     cost: 10
     ,scaling: 100
-    ,mult1: 1.01
+    ,mult1: 1.02
+    ,quandale: 0
 }
 
 var endgame = "eee6" // milliduplexion
+var version = "1.2.0"
+
+function buyDim1() {
+    if (x.gt(dim1.cost)) {
+        Decimal.sub(x, clk1.cost)
+    }
+}
 
 /// updating
 window.setInterval(function() {
