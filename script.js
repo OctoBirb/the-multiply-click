@@ -62,6 +62,7 @@ window.setInterval(function() {
     } else if (x.layer == 2) {
         ud("xtxt", "Your value is " + (Decimal.trunc(x.m * 10) / 10) + "ee" + x.e + ".")
     }
+    ud("xmps", "...and it's multiplying by approximately " + (Decimal.trunc(Decimal.pow(mult, 20))) + " every second.")
     
     x = Decimal.mul(mult, x) // or ((mult*x)*100), truncated, and then /100.
 }, 50)
