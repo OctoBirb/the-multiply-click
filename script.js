@@ -11,7 +11,7 @@ var x = 1
 var mult = 1.01
 
 var dim1 = {
-    cost: 10
+    cost: 1
     ,scaling: 10
     ,mult1: 1.01
     ,quandale: 0
@@ -32,7 +32,7 @@ function buyDim1() {
         x = Decimal.sub(x, dim1.cost)
         dim1.quandale = Decimal.add(1, dim1.quandale)
         dim1.mult1 = Decimal.add(dim1.mult1, 0.01)
-        dim1.cost = Decimal.mul(dim1.cost, dim1.scaling)
+        dim1.cost = Decimal.pow(3, dim1.quandale)
     } else {
         console.log("not enough value :(")
     }
@@ -62,7 +62,9 @@ window.setInterval(function() {
     } else if (x.layer == 2) {
         ud("xtxt", "Your value is " + (Decimal.trunc(x.m * 10) / 10) + "ee" + x.e + ".")
     }
-    ud("xmps", "...and it's multiplying by approximately " + (Decimal.trunc(Decimal.pow(mult, 20))) + " every second.")
+    ud("xmps", "...and it's multiplying by approximately " + (Decimal.trunc(Decimal.pow(mult, 20).mul(100)).div(100)) + " every second.")
+    ud("dim1", "Buy a Dimension 1 (Cost: " + dim1.cost + ")")
     
     x = Decimal.mul(mult, x) // or ((mult*x)*100), truncated, and then /100.
+    mult = Decimal.add(mult, Decimal.mul(dim1.quandale, (0.00002)))
 }, 50)
