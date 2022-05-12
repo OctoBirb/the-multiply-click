@@ -42,7 +42,7 @@ function buyClk1() {
     if (x.gt(clk1.cost)) {
         x = Decimal.sub(x, clk1.cost)
         clk1.quandale = Decimal.add(1, clk1.quandale)
-        clk1.mult1 = Decimal.add(clk1.mult1, 0.01)
+        clk1.mult1 = Decimal.mul(clk1.mult1, 1.50)
         clk1.cost = Decimal.mul(clk1.cost, clk1.scaling)
     } else {
         console.log("not enough value :(")
@@ -64,6 +64,8 @@ window.setInterval(function() {
     }
     ud("xmps", "...and it's multiplying by approximately " + (Decimal.trunc(Decimal.pow(mult, 20).mul(100)).div(100)) + " every second.")
     ud("dim1", "Buy a Dimension 1 (Cost: " + dim1.cost + ")")
+    ud("clk1", "Multiply your click multiplier by 150\u0025 (Cost: " + clk1.cost + ")")
+    ud("click", "Click (multiply x by " + clk1.mult1 + ")")
     
     x = Decimal.mul(mult, x) // or ((mult*x)*100), truncated, and then /100.
     mult = Decimal.add(mult, Decimal.mul(dim1.quandale, (0.00002)))
