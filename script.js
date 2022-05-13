@@ -8,7 +8,7 @@ var rb=(x,y)=>{
 console.log("hello vadim blyad")
 /// variables
 var x = 1
-var mult = 1.01
+var mult = 1.002
 
 var dim1 = {
     cost: 1
@@ -56,11 +56,11 @@ function xxclk() {
 /// updating
 window.setInterval(function() {
     if (x.layer == 0) {
-        ud("xtxt", "Your value is " + (Decimal.trunc(x * 10) / 10) + ".")
+        ud("xtxt", "Your value is " + (Decimal.trunc(x * 100) / 100) + ".")
     } else if (x.layer == 1 || x.e > 10) {
-        ud("xtxt", "Your value is " + (Decimal.trunc(x.m * 10) / 10) + "e" + x.e + ".")
+        ud("xtxt", "Your value is " + (Decimal.trunc(x.m * 100) / 100) + "e" + x.e + ".")
     } else if (x.layer == 2) {
-        ud("xtxt", "Your value is " + (Decimal.trunc(x.m * 10) / 10) + "ee" + x.e + ".")
+        ud("xtxt", "Your value is " + (Decimal.trunc(x.m * 100) / 100) + "ee" + x.e + ".")
     }
     ud("xmps", "...and it's multiplying by approximately " + (Decimal.trunc(Decimal.pow(mult, 20).mul(100)).div(100)) + " every second.")
     ud("dim1", "Buy a Dimension 1 (Cost: " + dim1.cost + ")")
@@ -68,5 +68,5 @@ window.setInterval(function() {
     ud("click", "Click (multiply x by " + clk1.mult1 + ")")
     
     x = Decimal.mul(mult, x) // or ((mult*x)*100), truncated, and then /100.
-    mult = Decimal.add(mult, Decimal.mul(dim1.quandale, (0.00002)))
+    mult = Decimal.add(mult, Decimal.mul(dim1.quandale, (0.000005)))
 }, 50)
